@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/car_demo?characterEncoding=utf-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai
+
+    username: root
+    password: root
+    #   hikari数据源配置
+    hikari:
+        connection-test-query: SELECT 1 FROM DUAL
+        connection-timeout: 30000
+        maximum-pool-size: 20
+        max-lifetime: 1800000
+        minimum-idle: 5
+#//localhost:10010/
+server:
+  port: 10010
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.internship.ds.model
